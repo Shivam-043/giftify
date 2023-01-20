@@ -162,11 +162,12 @@ body{
 
 
 #info{
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     display: flex;
     flex-direction: row;
-    flex-wrap: ;
+    flex-wrap: nowrap;
+    flex-shrink: 2;
     /* grid-template-columns: repeat(3,minmax(0,1fr)); */
     /* grid-template-columns: auto auto auto auto; */
     
@@ -175,7 +176,7 @@ body{
 #info section{
     justify-content: space-evenly;
     align-items: center;
-    display: flex;
+    /* display: flex; */
     padding: 20px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.06);
 }
@@ -1120,7 +1121,7 @@ body{
 
 @media (max-width: 400px){
     #header{
-        width: 200vw;
+        width: 220vw;
     }
     #hero{
         display: flex;
@@ -1139,7 +1140,21 @@ body{
     }
 
     #info{
-        /* overflow-x: auto; */
+        overflow-x: auto;
+        width: 200vw;
+        size: 20vw;
     }
+
+    #info .info-1{
+        width: 300vw;
+        height: 100vw;
+    }
+
+    #product_name h1{
+        color: black;
+        width: 200vw;
+        font-size: 40px;
+    }
+
 }
 
