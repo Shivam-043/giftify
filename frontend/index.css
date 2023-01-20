@@ -1153,8 +1153,10 @@ body{
     #product_name h1{
         color: black;
         width: 200vw;
-        font-size: 40px;
+        /* font-size: 40px; */
     }
+
+    #product_view .products-container
 
 }
 
