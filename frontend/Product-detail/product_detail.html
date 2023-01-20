@@ -28,7 +28,7 @@
           <li><a href="products.html">Products</a></li>
           <li><a href="#">Contact Us</a></li>
           <li>
-            <a href="cart.html" id="cart"
+            <a href="../cart.html" id="cart"
               ><i class="fa-solid fa-bag-shopping"></i
             ></a>
           </li>
@@ -82,28 +82,20 @@
           <span class="strike-through" style="text-decoration: line-through">Rs. 250</span> Rs. <span id="cart_value_before" class="price">200</span> 
         </p>
         <div class="cart-button" id="cart-button">
-          <button type="button" class="product-options" id="color">
-            <span>Colour</span>
+          <button type="button" class="product-options" id="color" onclick="addon1()">
+            <span>Colour</span> <i class="fa-sharp fa-solid fa-angle-down"></i>
           </button>
-          <button type="button" onclick="windows.location.href('#popup1')" class="product-options">
+          </button>
+          <button type="button" onclick="addon4()" class="product-options" id="required_btn">
             <span>Required</span> <i class="fa-sharp fa-solid fa-angle-down"></i>
           </button>
           <button type="button" onclick="addon2()" class="product-options" id="addon">
             <span>Addon</span> <i class="fa-sharp fa-solid fa-angle-down"></i>
           </button>
+
         </div>
       </div>
     </section>
-
-    <div id="popup1" class="overlay">
-      <div class="popup">
-        <h2>Here i am</h2>
-        <a class="close" href="#">&times;</a>
-        <div class="content">
-          Thank to pop me out of that button, but now i'm done so you can close this window.
-        </div>
-      </div>
-    </div>
 
     <section id="product-choose-color">
       <div class="color-screen">
@@ -213,7 +205,59 @@
         </div>
       </div>
     </section>
-    
+
+    <section id="choose_type">
+      <div class="color-screen" style="height: 70vh;">
+        <div class="header1">
+          <h3>Choose Types</h3>
+          <i class="fa-regular fa-circle-xmark" id="close_type"></i>
+        </div>
+        <hr />
+        <div class="type" id="radio_type">
+            <input type="radio" name="type" value="Bracellet"> Bracellet</input>
+            <input type="radio" name="type" value="Jewels"> Jewels</input>
+        </div>
+      </div>
+    </section>
+
+    <section id="special_product">
+      <div class="special_products" style="height: 70vh; margin-top: 30px; margin-left: none;">
+        <div class="header1">
+          <h3>Choose Special Products</h3>
+          <i class="fa-regular fa-circle-xmark" id="close_products"></i>
+        </div>
+        <hr />
+        <div class="products" id="radio_type">
+            <input type="radio" name="product" value="Doodle Art"> Doodle Art</input>
+            <input type="radio" name="product" value="Mug"> Mug</input>
+            <input type="radio" name="product" value="Photo Frame"> Photo Frame</input>
+        </div>
+      </div>
+    </section>
+
+    <section id="required">
+      <div class="occasion" style="height: 30vh;">
+        <div class="header1">
+          <h3>Occasion</h3>
+          <i class="fa-regular fa-circle-xmark" id="close_required"></i>
+        </div>
+        <hr/>
+        <div class="required" id="radio_required">
+            <input type="radio" name="occasion" value="Birthday"> <span>Birthday</span> </input>
+            <input type="radio" name="occasion" value="Love"> <span>Love</span> </input>
+            <input type="text" id="occ_name" placeholder="Any Other Occasion....">
+        </div>
+      </div>
+      <div class="text_main" style="height: 30vh;">
+        <div class="header1">
+          <h3>Text Screen</h3>
+        </div>
+        <hr />
+        <div class="text_screen" id="radio_type">
+          <input type="text" id="text_sc" placeholder="Type something for your loved ones">
+      </div>
+    </section>
+
 
     <section id="footer">
       <div class="about">

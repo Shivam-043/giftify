@@ -14,13 +14,18 @@ function formaction() {
   var data = {
     colors: JSON.stringify(data.colors),
     addons: JSON.stringify(data.addons),
+    check_types:JSON.stringify(data.check_types),
+    occasion:JSON.stringify(data.occasion),
+    occ_text:JSON.stringify(data.occ_text),
+    text_screen:JSON.stringify(data.text_screen),
+    special_product:JSON.stringify(data.special_product),
     product_id: product_id,
     total_price: Total_price,
     name: document.forms[0].name.value,
     email: document.forms[0].email.value,
     mobile_no: document.forms[0].mobile_no.value,
     address: document.forms[0].address.value,
-    Name_on_Gift: document.forms[0].Name_on_Gift.value,
+    Name_on_Gift: document.forms[0].Name_on_Gift.value, 
   };
   if (ValidateEmail(data.email) && ValidateMobile_no(data.mobile_no)) {
     axios

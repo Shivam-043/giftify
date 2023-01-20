@@ -44,6 +44,10 @@ app.post("/getProduct", (req, res) => {
     var types=req.body.types;
     var special_product=req.body.special_product;
     var success=false;
+    var check_types=req.body.check_types;
+    var occasion=req.body.occasion;
+    var occ_text=req.body.occ_text;
+    var text_screen=req.body.text_screen;
     db.query("select email from user_detail where email= ? ;",[Email] ,(err, result) => {
       if (err) {
         console.log("ERROR : ");
@@ -53,8 +57,11 @@ app.post("/getProduct", (req, res) => {
         if(result[0]!=null){
           console.log("old user");
           db.query(`update user_detail set name=?,mobile=?,address=? where email=?;
-          insert into order_detail (product_id,email,colors,addons,Total_price,types,special_product,name_on_gift) values (?,?,?,?,?,?);`
-          ,[name,mobile_no,address,Email,product_id,Email,colors,addons,total_price,types,special_product,Name_on_Gift] ,(err, result) => {
+          insert into order_detail (product_id,email,colors,addons,Total_price,
+            special_product,name_on_gift,check_types,occ_text,occasion,text_screen) values (?,?,?,?,?,?,?,?,?,?,?);`
+          ,[name,mobile_no,address,Email,product_id,Email,colors,
+            addons,total_price,special_product,Name_on_Gift,
+            check_types,occ_text,occasion,text_screen] ,(err, result) => {
             if (err) {
               console.log(err.sqlMessage);
               res.status(102).send(new Error(err.sqlMessage));
@@ -69,9 +76,11 @@ app.post("/getProduct", (req, res) => {
         else{
           console.log("new user");
           db.query(`insert into user_detail (name,email,mobile,address) values (?,?,?,?);
-          insert into order_detail (product_id,email,colors,addons,Total_price,types,special_product,name_on_gift) values (?,?,?,?,?,?,?,?);`
-          
-          ,[name,Email,mobile_no,address,product_id,Email,colors,addons,total_price,types,special_product,Name_on_Gift] ,(err, result) => {
+          insert into order_detail (product_id,email,colors,addons,Total_price,
+            special_product,name_on_gift,check_types,occ_text,occasion,text_screen) values (?,?,?,?,?,?,?,?,?,?,?)`
+          ,[name,Email,mobile_no,address,product_id,Email,colors,
+            addons,total_price,special_product,Name_on_Gift,
+            check_types,occ_text,occasion,text_screen] ,(err, result) => {
             if (err) {
               console.log(err.sqlMessage);
               res.status(102).send(new Error(err.sqlMessage));
