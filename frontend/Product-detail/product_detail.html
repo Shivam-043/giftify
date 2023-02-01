@@ -75,7 +75,7 @@
             style="width: 50%"
         />
       </div>
-      <div class="cart">
+      <div class="cart cart_item">
         <h4 id="product_name">LT 03 Premium Nappa All Black</h4>
         <p id="brand_name">Premium Nappa</p>
         <p>
@@ -86,14 +86,41 @@
             <span>Colour</span> <i class="fa-sharp fa-solid fa-angle-down"></i>
           </button>
           </button>
-          <button type="button" onclick="addon4()" class="product-options" id="required_btn">
+          <!-- <button type="button" onclick="addon4()" class="product-options" id="required_btn">
             <span>Required</span> <i class="fa-sharp fa-solid fa-angle-down"></i>
-          </button>
+          </button> -->
           <button type="button" onclick="addon2()" class="product-options" id="addon">
             <span>Addon</span> <i class="fa-sharp fa-solid fa-angle-down"></i>
           </button>
-
         </div>
+        <section id="required">
+          <div class="occasion" style="height: 20vh;">
+            <div class="header1">
+              <h3>Occasion</h3>
+              <!-- <i class="fa-regular fa-circle-xmark" id="close_required"></i> -->
+            </div>
+            <hr/>
+            <div class="required" id="radio_required">
+              <div class="align">
+                <input type="radio" name="occasion" value="Birthday"> <span>Birthday</span> </input>
+              </div>
+              <div class="align">
+                <input type="radio" name="occasion" value="Love"> <span>Love</span> </input>
+              </div>
+              <div class="align">
+                <input type="text" id="occ_name" placeholder="Any Other Occasion....">
+              </div>
+            </div>
+          </div>
+          <div class="text_main" style="height: 20vh;">
+            <div class="header1">
+              <h3>Text Screen</h3>
+            </div>
+            <hr />
+            <div class="text_screen" id="radio_type">
+              <input type="text" id="text_sc" placeholder="Type something for your loved ones" style="height: 100px;">
+          </div>
+        </section>
       </div>
     </section>
 
@@ -206,7 +233,7 @@
       </div>
     </section>
 
-    <section id="choose_type">
+    <!-- <section id="choose_type">
       <div class="color-screen" style="height: 70vh;">
         <div class="header1">
           <h3>Choose Types</h3>
@@ -233,30 +260,9 @@
             <input type="radio" name="product" value="Photo Frame"> Photo Frame</input>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <section id="required">
-      <div class="occasion" style="height: 30vh;">
-        <div class="header1">
-          <h3>Occasion</h3>
-          <i class="fa-regular fa-circle-xmark" id="close_required"></i>
-        </div>
-        <hr/>
-        <div class="required" id="radio_required">
-            <input type="radio" name="occasion" value="Birthday"> <span>Birthday</span> </input>
-            <input type="radio" name="occasion" value="Love"> <span>Love</span> </input>
-            <input type="text" id="occ_name" placeholder="Any Other Occasion....">
-        </div>
-      </div>
-      <div class="text_main" style="height: 30vh;">
-        <div class="header1">
-          <h3>Text Screen</h3>
-        </div>
-        <hr />
-        <div class="text_screen" id="radio_type">
-          <input type="text" id="text_sc" placeholder="Type something for your loved ones">
-      </div>
-    </section>
+    
 
 
     <section id="footer">

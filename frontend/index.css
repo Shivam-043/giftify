@@ -49,7 +49,7 @@ p{
 }
 
 body{
-    width: 100%;
+    width: 100vw;
     background-color: #FFF8E7;
 }
 
@@ -165,9 +165,10 @@ body{
     justify-content: space-between;
     align-items: center;
     display: flex;
-    flex-direction: row;
+    flex-flow: nowrap;
+    /* flex-direction: row;
     flex-wrap: nowrap;
-    flex-shrink: 2;
+    flex-shrink: 2; */
     /* grid-template-columns: repeat(3,minmax(0,1fr)); */
     /* grid-template-columns: auto auto auto auto; */
     
@@ -545,6 +546,51 @@ body{
 
 /* Product-Page */
 
+#required{
+    margin-top: 30px;
+    /* box-shadow: 0 0px 60px rgb(0, 0, 0, 0.1); */
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+#required .required{
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+#required .occasion, #required .text_main{
+    width: 40%;
+}
+
+#required input{
+    display: flex;
+    flex-direction: column;
+}
+
+#required .required .align{
+    margin-top: 20px;
+    align-items: center;
+    display: flex;
+}
+
+#required .text_main .text_screen{
+    margin-top: 20px;
+}
+
+
+.cart .amount{
+    padding: 11px 16px;
+    background-color: #60b246;
+    color: #fff;
+    position: relative;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+}
+
 #product-image {
     display: flex;
     flex-wrap: wrap;
@@ -552,7 +598,7 @@ body{
 #product-image .cart{
     width: 40%;
     /* background-color: white; */
-    box-shadow: 0 40px 60px rgb(0, 0, 0, 0.1);
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     padding-top: 100px;
     padding-left: 40px;
     padding-right: 40px;
@@ -591,35 +637,38 @@ body{
 
 #product-image .cart-button .product-options{
     content: "";
-    border-style: solid;
+    /* border-style: solid;
     border-width: 4px 3px 0;
-    border-color: #000 rgba(0,0,0,0) rgba(0,0,0,0);
+    border-color: #000 rgba(0,0,0,0) rgba(0,0,0,0); */
     position: relative;
     cursor: pointer;
+    transition: 0.5s ease;
+    margin-top: 20px;
 }
 
 
-#product-choose-color, #choose_type , #required , #special_product{
+#product-choose-color{
     display: none;
     background-color: #FFF8E7;
     position: absolute;
-    width: 100%;
+    width: 40vw;
     top: 100px;
     left: 58%;
     transition: 0.3s ease;
+
 }
 
-#product-choose-color .color-screen , #choose_type .color-screen,  #special_products .special_products{
-    box-shadow: 0 40px 60px rgb(0, 0, 0, 0.1);
-    width: 40%;
-    
+
+
+#product-choose-color .color-screen {
+    box-shadow: 0 0px 60px rgb(0, 0, 0, 0.1);
+    width: 40vw;
+    height: 80vh;
+    transition: 0.3s ease;
 }
 
-#required .occasion, #required .text_main{
-    width: 40%;
-}
 
-#product-choose-color .header1 , #choose_type .header1 , #required .occasion .header1, #special_products .header1{
+#product-choose-color .header1 {
     padding-left: 26%;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -652,18 +701,50 @@ body{
     /* padding-bottom: 10%; */
 }
 
-#required input{
+
+/* Big content choose type */
+hr{
+    width: 10vw;
+}
+
+span{
+    width: 10vw;
+}
+#big_content , #choose_type {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#big_content #choose_type , #choose_type{
+    width: 20vw;
+}
+
+#big_content{
+    width: 20vw;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+#big_content .align , #choose_type .align{
+    margin-top: 20px;
+    align-items: center;
+    display: flex;
+    /* justify-content:space-around; */
+}
+
+#big_content input{
     display: flex;
     flex-direction: column;
-
 }
 
-#required span{
+#special_product{
+    width: 290px;
+    right: 20%;
     position: relative;
 }
-
-
-
+#special_product .header1{
+    width: 20vw;
+}
 /* #product-addon.active{
     left: 58%;
 } */
@@ -1008,6 +1089,10 @@ body{
 /* Start Media Query */
 
 @media (max-width:799px){
+
+    body{
+
+    }
     #navbar {
         display: flex;
         flex-direction: column;
@@ -1074,12 +1159,16 @@ body{
 }
 
 @media (max-width:400px){
+    body{
+        width: 500vw;
+    }
+
     #mobile{
         position: relative;
         left: -15vw;
     }
     #header .logo{
-        left: -20vw;
+        left: 10vw;
         position: relative;
     }
     #footer_product{
@@ -1099,7 +1188,7 @@ body{
         display: flex;
         flex-direction: column;
         left: -1vw;
-    position: absolute;
+        position: absolute;
     }
     #product-image .cart{
         width: 100%;
@@ -1116,23 +1205,23 @@ body{
         transition: 0.3s ease;
         height: 100%;
     }
-}
 
-
-@media (max-width: 400px){
     #header{
-        width: 220vw;
+        width: 300vw;
     }
     #hero{
         display: flex;
         flex-direction: column;
     }
     #hero img{
-        margin-left: 400px;
+        margin-left: -110vw;
+        height: 250vh;
+        width: 400vw;
     }
 
     #hero .web_info{
         position: absolute;
+        right: 0vw;
     }
 
     #hero .web_info h4 , h1, h2{
@@ -1140,23 +1229,95 @@ body{
     }
 
     #info{
-        overflow-x: auto;
-        width: 200vw;
+        /* overflow-x: auto; */
+        width: 400vw;
+        height: 700vw;
         size: 20vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        /* flex-direction: column; */
     }
 
     #info .info-1{
-        width: 300vw;
+        /* width: 300vw; */
         height: 100vw;
     }
 
     #product_name h1{
         color: black;
         width: 200vw;
+        top: 20vh;
+        position: relative;
         /* font-size: 40px; */
     }
+    
+    /* #info section.info-1:nth-child(2){
+        display: none;
+    } */
 
-    #product_view .products-container
+    #info section.info-1 {
+        flex-direction: column;
+        height: 50vw;
+        margin-top: -70vh;
+
+    }
+
+    #info .upper_info{
+        display: flex;
+    }
+
+    #info .bottom_info{
+        display: flex;
+        flex-wrap: nowrap;
+        position: relative;
+        top: 170vw;
+        justify-content: space-between;
+        align-self: stretch;
+    }
+
+    .upper_img{
+        width: 375vw;
+
+    }
+
+    .bottom_img{
+        width: 180vw;
+        height: 600px;
+    }
+
+
+    #product_view {
+        top: 50vh;
+        position: relative;
+    }
+
+    #branding{
+        top: 30vh;
+        position: relative;
+    }
+
+    #branding .main{
+        flex-direction: column;
+    }
+
+    #branding .brand_img{
+        width: 70%;
+    }
+
+    #products_view .products-container{
+        flex-flow: row;
+        top: 20vh;
+        position: relative;
+    }
+
+    #products_view .pro{
+            width: 500vw;
+    } 
+
+    #footer{
+        margin-top: 40vh;
+    }
 
 }
 

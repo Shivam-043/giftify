@@ -26,15 +26,24 @@ function formaction() {
     mobile_no: document.forms[0].mobile_no.value,
     address: document.forms[0].address.value,
     Name_on_Gift: document.forms[0].Name_on_Gift.value, 
+    otp : document.forms[0].OTP_verify.value
+
   };
   if (ValidateEmail(data.email) && ValidateMobile_no(data.mobile_no)) {
     axios
       .post(Server2, data)
       .then((res) => {
-        console.log(res.data);
-        if (res.data == "success") {
-          alert("order successful");
-          window.location.href = "../index.html";
+        console.log(res.data[0]);
+        if (res.data[0] == "success") {
+          if(data.otp == res.data[1])
+          {
+            alert("order successful");
+            window.location.href = "../index.html";
+          }
+          else{
+            alert("OTP is not same")
+          }
+
         } else {
           alert("some error occured \ntry again");
         }
@@ -73,3 +82,4 @@ function ValidateMobile_no(inputText){
         return false;
       }
 }
+

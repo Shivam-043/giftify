@@ -17,7 +17,7 @@ function product_view() {
         // var brand= result[i].brand;
         // var name= result[i].name;
         product.innerHTML += `<div class="pro" value="`+result[i].product_id+`" onclick="product_info_redirect('`+i+`')">
-        <img src="assets/img/istockphoto-491520707-612x612.jpg">
+        <img src="assets/img/istockphoto-491520707-612x612.jpg" class="product_img">
         <img src="assets/img/sample-stamp-rubber-style-red-260nw-1811246308.webp" class="hover_image">
         <div class="des">
           <span style="font-family: 'Dosis', sans-serif;">`+result[i].brand+`</span>
