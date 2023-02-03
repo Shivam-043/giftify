@@ -1,2 +1,0 @@
-# giftify
-Giftify
